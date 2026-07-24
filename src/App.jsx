@@ -18,7 +18,7 @@ const PLACEHOLDER_ITEMS = [
   'Gets someone\'s number',
   'Spills a drink',
   'Falls down',
-  'Kisses someone',
+  'Tries to kiss somebody',
   'Gets a tattoo',
   'Loses his phone',
   'Cries',
