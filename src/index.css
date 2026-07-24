@@ -41,6 +41,37 @@ body {
   padding: 20px;
 }
 
+.rules-box {
+  background: rgba(193, 18, 31, 0.2);
+  border: 2px solid #c1121f;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.rules-box h2 {
+  color: #ffd60a;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.rules-box ol {
+  margin-left: 20px;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.rules-box li {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.rules-box strong {
+  color: #ffd60a;
+}
+
 .login-screen {
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
@@ -222,6 +253,19 @@ body {
   .rules-banner {
     font-size: 14px;
     padding: 12px;
+  }
+
+  .rules-box {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .rules-box h2 {
+    font-size: 16px;
+  }
+
+  .rules-box li {
+    font-size: 13px;
   }
 
   .bingo-grid {
