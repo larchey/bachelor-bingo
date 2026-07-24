@@ -14,7 +14,7 @@ const PLACEHOLDER_ITEMS = [
   'Tries to kiss somebody',
   'Tries to go to bed early',
   'Brings up RuneScape',
-  '',
+  'Is found singing karaoke alone',
   '',
   '',
   '',
