@@ -21,13 +21,13 @@ const PLACEHOLDER_ITEMS = [
   'Twerks on somebody',
   'Removes an item during a meal (picky eating)',
   'Pukes',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
+  'Rants about Donald Trump',
+  'Rants about prediction markets',
+  'Fisch falls asleep not in a bed',
+  'Starts a water polo treading drill',
+  'Brings up Steven smacking Charlie with a sword',
+  'Shows a pic of something he cooked',
+  'Pulls out photo of Lucy',
 ]
 
 function generateGrid(username) {
