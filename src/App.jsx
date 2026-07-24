@@ -24,7 +24,7 @@ const PLACEHOLDER_ITEMS = [
   'Cries',
   'Breaks something',
   'Makes a scene',
-  'Passes out',
+  'Brings up RuneScape',
   'Gets rejected',
   'Pukes',
   'Does something stupid on the dance floor',
