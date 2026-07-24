@@ -17,6 +17,7 @@ export default function LoginScreen({ onLogin }) {
         <ol>
           <li><strong>Don't tell Andy.</strong></li>
           <li><strong>No direct questions.</strong> Don't ask Andy about bingo items. Tangential questions to start moving towards the topic are allowed.</li>
+          <li><strong>Winner gets $100 worth of scratchers.</strong></li>
         </ol>
       </div>
       <form className="login-screen" onSubmit={handleSubmit}>
