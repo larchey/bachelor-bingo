@@ -33,7 +33,9 @@ const PLACEHOLDER_ITEMS = [
 
 function generateGrid(username) {
   const shuffled = [...PLACEHOLDER_ITEMS].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, 25)
+  const grid = shuffled.slice(0, 24)
+  grid.splice(12, 0, 'FREE')
+  return grid
 }
 
 function App() {
@@ -61,16 +63,17 @@ function App() {
     const newGrid = generateGrid(name)
     setUsername(name)
     setGrid(newGrid)
-    setMarked(new Set())
+    setMarked(new Set([12]))
     setIsLoggedIn(true)
     localStorage.setItem('bingo_session', JSON.stringify({
       user: name,
       grid: newGrid,
-      marked: [],
+      marked: [12],
     }))
   }
 
   const handleToggleCell = (index) => {
+    if (index === 12) return
     const newMarked = new Set(marked)
     if (newMarked.has(index)) {
       newMarked.delete(index)
@@ -96,11 +99,11 @@ function App() {
   const handleReset = () => {
     const newGrid = generateGrid(username)
     setGrid(newGrid)
-    setMarked(new Set())
+    setMarked(new Set([12]))
     localStorage.setItem('bingo_session', JSON.stringify({
       user: username,
       grid: newGrid,
-      marked: [],
+      marked: [12],
     }))
   }
 

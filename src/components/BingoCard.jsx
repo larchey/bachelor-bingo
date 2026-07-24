@@ -10,7 +10,7 @@ export default function BingoCard({
     <div className="bingo-container">
       <div className="bingo-header">
         <h1>🎲 {username}'s Bingo</h1>
-        <p>{marked.size} / {grid.length} marked</p>
+        <p>{marked.size - 1} / 24 marked</p>
         <button className="logout-btn" onClick={onLogout}>Switch Player</button>
       </div>
 
@@ -18,8 +18,9 @@ export default function BingoCard({
         {grid.map((item, index) => (
           <div
             key={index}
-            className={`bingo-cell ${marked.has(index) ? 'marked' : ''}`}
+            className={`bingo-cell ${marked.has(index) ? 'marked' : ''} ${index === 12 ? 'free' : ''}`}
             onClick={() => onToggleCell(index)}
+            style={index === 12 ? { cursor: 'default' } : {}}
           >
             {item}
           </div>
