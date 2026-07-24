@@ -44,7 +44,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
-    const saved = localStorage.getItem('bingo_session')
+    const saved = localStorage.getItem('bingo_current_session')
     if (saved) {
       try {
         const { user, grid, marked } = JSON.parse(saved)
@@ -59,15 +59,38 @@ function App() {
   }, [])
 
   const handleLogin = (name) => {
-    const newGrid = generateGrid(name)
+    const sessionKey = `bingo_user_${name}`
+    const saved = localStorage.getItem(sessionKey)
+
+    let grid, marked
+    if (saved) {
+      try {
+        const { grid: savedGrid, marked: savedMarked } = JSON.parse(saved)
+        grid = savedGrid
+        marked = new Set(savedMarked)
+      } catch (e) {
+        console.error('Failed to restore user session:', e)
+        grid = generateGrid(name)
+        marked = new Set([12])
+      }
+    } else {
+      grid = generateGrid(name)
+      marked = new Set([12])
+    }
+
     setUsername(name)
-    setGrid(newGrid)
-    setMarked(new Set([12]))
+    setGrid(grid)
+    setMarked(marked)
     setIsLoggedIn(true)
-    localStorage.setItem('bingo_session', JSON.stringify({
+
+    localStorage.setItem(sessionKey, JSON.stringify({
+      grid,
+      marked: Array.from(marked),
+    }))
+    localStorage.setItem('bingo_current_session', JSON.stringify({
       user: name,
-      grid: newGrid,
-      marked: [12],
+      grid,
+      marked: Array.from(marked),
     }))
   }
 
@@ -80,7 +103,12 @@ function App() {
       newMarked.add(index)
     }
     setMarked(newMarked)
-    localStorage.setItem('bingo_session', JSON.stringify({
+    const sessionKey = `bingo_user_${username}`
+    localStorage.setItem(sessionKey, JSON.stringify({
+      grid,
+      marked: Array.from(newMarked),
+    }))
+    localStorage.setItem('bingo_current_session', JSON.stringify({
       user: username,
       grid,
       marked: Array.from(newMarked),
@@ -88,7 +116,7 @@ function App() {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('bingo_session')
+    localStorage.removeItem('bingo_current_session')
     setUsername('')
     setGrid([])
     setMarked(new Set())
@@ -99,7 +127,12 @@ function App() {
     const newGrid = generateGrid(username)
     setGrid(newGrid)
     setMarked(new Set([12]))
-    localStorage.setItem('bingo_session', JSON.stringify({
+    const sessionKey = `bingo_user_${username}`
+    localStorage.setItem(sessionKey, JSON.stringify({
+      grid: newGrid,
+      marked: [12],
+    }))
+    localStorage.setItem('bingo_current_session', JSON.stringify({
       user: username,
       grid: newGrid,
       marked: [12],
