@@ -15,7 +15,7 @@ const PLACEHOLDER_ITEMS = [
   'Buys a round',
   'Dances alone',
   'Loses his shoe',
-  'Gets someone\'s number',
+  'Tries to go to bed early',
   'Spills a drink',
   'Falls down',
   'Tries to kiss somebody',
