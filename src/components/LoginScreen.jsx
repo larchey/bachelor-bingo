@@ -15,7 +15,7 @@ export default function LoginScreen({ onLogin }) {
       <div className="rules-box">
         <h2>📋 The Rules</h2>
         <ol>
-          <li><strong>Don't tell Andy.</strong> Seriously. This is a secret.</li>
+          <li><strong>Don't tell Andy.</strong></li>
           <li><strong>No direct questions.</strong> Don't ask Andy about bingo items. Tangential questions to start moving towards the topic are allowed.</li>
         </ol>
       </div>
