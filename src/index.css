@@ -175,12 +175,12 @@ body {
 .bingo-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: clamp(3px, 1.5vw, 10px);
+  gap: 2px;
   background: rgba(0, 0, 0, 0.3);
-  padding: clamp(6px, 1.5vw, 12px);
+  padding: 4px;
   border-radius: 10px;
   margin: 0 auto;
-  width: min(100% - 16px, 600px);
+  width: min(100%, 600px);
   aspect-ratio: 1;
 }
 
@@ -249,12 +249,12 @@ body {
 
 @media (max-width: 600px) {
   .container {
-    padding: 8px;
+    padding: 4px;
   }
 
   .bingo-container {
     width: 100%;
-    padding: 0 8px;
+    padding: 0 4px;
     box-sizing: border-box;
   }
 
