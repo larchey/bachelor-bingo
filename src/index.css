@@ -175,30 +175,32 @@ body {
 .bingo-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 2vw;
+  gap: clamp(4px, 2vw, 12px);
   background: rgba(0, 0, 0, 0.3);
-  padding: 2vw;
+  padding: clamp(8px, 2vw, 16px);
   border-radius: 10px;
   margin: 0 auto;
-  width: 90vw;
-  max-width: 600px;
+  width: min(100% - 32px, 600px);
+  aspect-ratio: 1;
 }
 
 .bingo-cell {
+  aspect-ratio: 1;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: clamp(8px, 2.5vw, 14px);
+  font-size: clamp(11px, 3.5vw, 16px);
+  padding: clamp(4px, 1vw, 8px);
   cursor: pointer;
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
   color: #eee;
   font-weight: bold;
-  min-height: 60px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .bingo-cell:hover {
@@ -245,33 +247,36 @@ body {
 
 @media (max-width: 600px) {
   .container {
-    padding: 1vw;
+    padding: clamp(8px, 2vw, 16px);
   }
 
   .bingo-container {
-    width: 95vw;
+    width: 100%;
+    padding: 0 clamp(8px, 2vw, 16px);
+    box-sizing: border-box;
   }
 
   .bingo-header {
-    padding: 0 2vw;
+    padding: 0;
+    margin-bottom: 16px;
   }
 
   .bingo-header h1 {
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: clamp(20px, 6vw, 26px);
   }
 
   .bingo-header p {
-    font-size: clamp(10px, 2.5vw, 12px);
+    font-size: clamp(11px, 2.5vw, 13px);
   }
 
   .rules-banner {
     font-size: clamp(12px, 3vw, 16px);
-    padding: 2vw;
+    padding: clamp(10px, 2vw, 16px);
   }
 
   .rules-box {
-    padding: clamp(10px, 3vw, 15px);
-    margin: 0 2vw 2vw 2vw;
+    padding: clamp(12px, 3vw, 18px);
+    margin: 0 0 16px 0;
   }
 
   .rules-box h2 {
@@ -280,13 +285,13 @@ body {
 
   .rules-box li {
     font-size: clamp(11px, 2.5vw, 13px);
-    margin-bottom: 1vw;
+    margin-bottom: 8px;
   }
 
   .login-screen {
-    padding: clamp(15px, 5vw, 25px);
-    margin: 0 2vw;
-    width: 90vw;
+    padding: clamp(20px, 5vw, 32px);
+    width: calc(100% - 32px);
+    margin: 0 auto;
   }
 
   .login-screen h1 {
@@ -295,12 +300,12 @@ body {
 
   .logout-btn {
     font-size: clamp(10px, 2vw, 12px);
-    padding: clamp(5px, 1vw, 8px) clamp(10px, 2vw, 14px);
+    padding: clamp(6px, 1.5vw, 10px) clamp(12px, 2.5vw, 16px);
   }
 
   .reset-btn {
-    margin: 2vw;
-    padding: clamp(8px, 2vw, 12px) clamp(15px, 3vw, 20px);
+    margin: 16px auto 0;
+    padding: clamp(10px, 2.5vw, 14px) clamp(16px, 3vw, 24px);
     font-size: clamp(12px, 2.5vw, 16px);
   }
 }
