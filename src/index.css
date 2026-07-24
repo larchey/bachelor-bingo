@@ -175,12 +175,12 @@ body {
 .bingo-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: clamp(4px, 2vw, 12px);
+  gap: clamp(3px, 1.5vw, 10px);
   background: rgba(0, 0, 0, 0.3);
-  padding: clamp(8px, 2vw, 16px);
+  padding: clamp(6px, 1.5vw, 12px);
   border-radius: 10px;
   margin: 0 auto;
-  width: min(100% - 32px, 600px);
+  width: min(100% - 16px, 600px);
   aspect-ratio: 1;
 }
 
@@ -192,8 +192,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: clamp(11px, 3.5vw, 16px);
-  padding: clamp(4px, 1vw, 8px);
+  font-size: clamp(9px, 2.8vw, 14px);
+  padding: 2px;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
@@ -201,6 +201,8 @@ body {
   font-weight: bold;
   min-width: 0;
   overflow: hidden;
+  word-break: break-word;
+  line-height: 1.2;
 }
 
 .bingo-cell:hover {
@@ -247,12 +249,12 @@ body {
 
 @media (max-width: 600px) {
   .container {
-    padding: clamp(8px, 2vw, 16px);
+    padding: 8px;
   }
 
   .bingo-container {
     width: 100%;
-    padding: 0 clamp(8px, 2vw, 16px);
+    padding: 0 8px;
     box-sizing: border-box;
   }
 
