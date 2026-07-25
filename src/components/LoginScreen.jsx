@@ -17,7 +17,7 @@ export default function LoginScreen({ onLogin }) {
         <ol>
           <li><strong>Don't tell Andy.</strong></li>
           <li><strong>No direct questions.</strong> Don't ask Andy about bingo items. Tangential questions to start moving towards the topic are allowed.</li>
-          <li><strong>Winner gets $100 worth of scratchers.</strong></li>
+          <li><strong>Winner gets a $50 scratcher.</strong> (This was always the prize. It was never more.)</li>
           <li><strong>If Andy finds out and it's your fault, you're disqualified.</strong></li>
           <li><strong>Snaps as celebration</strong> if somebody gets Andy to talk about one of the topics.</li>
         </ol>
